@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from "./CartWidget";
 
 export default function NavBar() {
     return(
@@ -9,9 +10,10 @@ export default function NavBar() {
             <div className="row">
                 <div className="col">
               
-            
+                
             <Navbar bg="light" expand="lg" >
                 <Container>
+                
                     <Navbar.Brand href="#home">My e-commerce</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -28,6 +30,8 @@ export default function NavBar() {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
+                    <CartWidget />
+                    
                 </Container>
             </Navbar>
 
