@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 
 export default function Item({ item }) {
@@ -16,8 +16,9 @@ export default function Item({ item }) {
                         <Card.Body>
                             <Card.Title>{item.product}</Card.Title>
                             <Card.Text>{item.category}</Card.Text>
-                            <Card.Text>{item.detail}</Card.Text>
+                            {/* <Card.Text>{item.detail}</Card.Text> */}
                             <Card.Text>Precio{item.prize}</Card.Text>
+                            <Button variant="secondary">Ver detalle</Button>
                         </Card.Body>
 
                     </Card>

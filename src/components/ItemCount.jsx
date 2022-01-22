@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button } from 'react-bootstrap'
+import {  Button } from 'react-bootstrap'
 
 
 export default function ItemCount({ initial, stock }) {
@@ -19,7 +19,7 @@ export default function ItemCount({ initial, stock }) {
     return (
 
 
-        <div style={{ display: "flex", padding: "0 10px", width: "30%", flexDirection: "column" }}>
+        <div >
 
             <div style={{ display: "flex", width: "100%", flexDirection: "row" }}>
                 <Button variant="primary" style={{ width: "30%", padding: "0 10px" }} onClick={decrease}>-</Button>

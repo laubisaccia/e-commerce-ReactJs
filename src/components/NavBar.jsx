@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from "./CartWidget";
+import '../App.css';
 
 export default function NavBar() {
     return (
