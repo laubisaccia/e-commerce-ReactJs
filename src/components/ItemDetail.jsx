@@ -1,6 +1,6 @@
 // import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 
 
@@ -24,7 +24,9 @@ export default function ItemDetail({ producto }) {
                             <ItemCount initial={1} stock={5}/>
                         </Card>
                     </div> :
-                    <>Loading...</>
+                    <Spinner animation="border" variant="secondary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
                     
                 }
 

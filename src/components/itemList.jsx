@@ -1,8 +1,9 @@
 import React from 'react';
 import Item from './item';
 // import { Card, Button } from 'react-bootstrap'
+import { Spinner } from "react-bootstrap";
 
-export default function ItemList({product, load}) {
+export default function ItemList({ product, load }) {
     // const [product, setPruduct] = useState([]);
     // const [load, setLoad] = useState(false);
 
@@ -30,13 +31,15 @@ export default function ItemList({product, load}) {
 
     return (
         <>
-            {(load)?
-            <div style={{ display: "flex", width: "100%" }}>
-                {product.map(item => <Item key= {item.id} item={item} />)}
+            {(load) ?
+                <div style={{ display: "flex", width: "100%" }}>
+                    {product.map(item => <Item key={item.id} item={item} />)}
 
-            </div>:
-            <>Loading...</>
-}
+                </div> :
+                <Spinner animation="border" variant="secondary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            }
         </>
 
 
