@@ -6,11 +6,13 @@ import ItemCount from "./ItemCount";
 
 
 export default function ItemDetail({ producto }) {
-
+console.log("peod",producto)
     return (
         <>
             <div style={{ margin: "20px" }}>
                 {(producto.id) ?
+                
+                
                     <div>
                         <Card style={{ width: '18rem', align: "center" }}>
                             <Card.Img variant="top" src={producto.img} />
@@ -36,3 +38,4 @@ export default function ItemDetail({ producto }) {
 
     )
 }
+

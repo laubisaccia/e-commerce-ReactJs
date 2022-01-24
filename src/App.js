@@ -4,7 +4,9 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import NavBar from './components/NavBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+
 
 
 function App() {
@@ -14,16 +16,24 @@ function App() {
   
    <BrowserRouter>
       <NavBar  />
-      <Routes>
-          <Route exact path="/" element={<ItemListContainer greeting={saludo}/>} >
+      <Switch>
+          <Route exact path="/" >
+          <ItemListContainer greeting={saludo}/>
           </Route>
 
-          <Route path="/item/:itemId" element={ <ItemDetailContainer />}>
+          <Route path="/productos/:itemId">
+          <ItemDetailContainer />
+          </Route>
+
+          <Route path="/remeras">
+          <ItemListContainer greeting={saludo}/>
           </Route>
       
       {/* <ItemCount initial={1} stock={5}/> */}
-      </Routes>
+      </Switch>
+      <Footer />
       </BrowserRouter>
+      
    </>
 
   );
