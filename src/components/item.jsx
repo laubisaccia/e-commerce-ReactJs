@@ -18,7 +18,7 @@ export default function Item({ item }) {
                             <Card.Text>{item.category}</Card.Text>
                             {/* <Card.Text>{item.detail}</Card.Text> */}
                             <Card.Text>Precio{item.prize}</Card.Text>
-                            <Button variant="secondary">Ver detalle</Button>
+                            <Button variant="secondary" >Ver detalle</Button>
                         </Card.Body>
 
                     </Card>

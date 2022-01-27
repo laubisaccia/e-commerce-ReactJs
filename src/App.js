@@ -7,8 +7,6 @@ import NavBar from './components/NavBar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 
-
-
 function App() {
   const saludo ="Bienvenido, pronto vamos a actualizar la tienda :)"
   return (
@@ -25,8 +23,8 @@ function App() {
           <ItemDetailContainer />
           </Route>
 
-          <Route path="/remeras">
-          <ItemListContainer greeting={saludo}/>
+          <Route path="/cat/:category">
+          <ItemListContainer />
           </Route>
       
       {/* <ItemCount initial={1} stock={5}/> */}
