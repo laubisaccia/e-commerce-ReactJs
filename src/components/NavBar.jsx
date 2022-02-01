@@ -34,6 +34,10 @@ export default function NavBar() {
                                         <LinkContainer to="/productos">
                                         <Nav.Link >Productos</Nav.Link>
                                         </LinkContainer>
+
+                                        <LinkContainer to="/cart">
+                                        <Nav.Link >Cart</Nav.Link>
+                                        </LinkContainer>
                                        
                                         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

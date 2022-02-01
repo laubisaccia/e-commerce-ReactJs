@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 export default function Item({ item }) {
@@ -18,7 +19,9 @@ export default function Item({ item }) {
                             <Card.Text>{item.category}</Card.Text>
                             {/* <Card.Text>{item.detail}</Card.Text> */}
                             <Card.Text>Precio{item.prize}</Card.Text>
+                            <Link to={`/productos/${item.id}`}>
                             <Button variant="secondary" >Ver detalle</Button>
+                            </Link>
                         </Card.Body>
 
                     </Card>

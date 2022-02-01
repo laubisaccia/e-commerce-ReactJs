@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {  Button } from 'react-bootstrap'
 
 
-export default function ItemCount({ initial, stock }) {
+export default function ItemCount({ initial, stock, onAdd }) {
 
     const [count, setCount] = useState(initial);
 
@@ -13,9 +13,7 @@ export default function ItemCount({ initial, stock }) {
     const decrease = () => {
         if (count > initial) { setCount(count - 1) }
     };
-    const add = () => {
-        alert(count);
-    }
+    
     return (
 
 
@@ -28,7 +26,7 @@ export default function ItemCount({ initial, stock }) {
             </div>
 
             <div>
-                <Button variant="primary" style={{ width: "90%", padding: "0 10px" }} onClick={add} >Agregar</Button>
+                <Button variant="primary" style={{ width: "90%", padding: "0 10px" }} onClick={()=>onAdd(count)} >Agregar</Button>
             </div>
 
         </div>

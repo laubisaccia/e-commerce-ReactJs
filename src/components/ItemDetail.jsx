@@ -1,14 +1,26 @@
 // import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, {useState} from "react";
 import { Card, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 
 
 export default function ItemDetail({ producto }) {
-console.log("peod",producto)
+
+// const [counter, setCounter] = useState();
+const [showItemCount, setShowItemCount] = useState(true);
+
+const onAdd = (count) => {
+    alert(count);
+    setShowItemCount(false);
+    // setCounter(counter);
+    
+}
+
     return (
         <>
+       
             <div style={{ margin: "20px" }}>
                 {(producto.id) ?
                 
@@ -23,7 +35,17 @@ console.log("peod",producto)
                                 <Card.Text>Precio{producto.prize}</Card.Text>
                                 {/* <Button variant="secondary">Ver detalle</Button> */}
                             </Card.Body>
-                            <ItemCount initial={1} stock={5}/>
+                            {
+                                (showItemCount)?
+                                <ItemCount initial={1} stock={5} onAdd={onAdd} />:
+
+                                 <Link to={'/cart'}>
+                                 <button>link para terminar compra </button>
+                                
+                               </Link>
+
+                            }
+                            {/* <ItemCount initial={1} stock={5} onAdd={onAdd}/> */}
                         </Card>
                     </div> :
                     <Spinner animation="border" variant="secondary" role="status">
@@ -33,6 +55,7 @@ console.log("peod",producto)
                 }
 
             </div>
+            
         </>
 
 
