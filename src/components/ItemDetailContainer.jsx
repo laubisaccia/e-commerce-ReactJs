@@ -7,8 +7,10 @@ import panuelored from '../aseets/img/panuelored.jpg'
 import panueloblue from '../aseets/img/panueloblue.jpg'
 import arosRayo from '../aseets/img/arosRayo.jpg'
 
+
 export default function ItemDetailContainer() {
 
+    
     const { itemId } = useParams();
     const [producto, setProducto] = useState({});
 

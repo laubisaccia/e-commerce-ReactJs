@@ -36,7 +36,9 @@ export default function NavBar() {
                                         </LinkContainer>
 
                                         <LinkContainer to="/cart">
-                                        <Nav.Link >Cart</Nav.Link>
+                                        <Nav.Link >Cart
+                                            <CartWidget />
+                                        </Nav.Link>
                                         </LinkContainer>
                                        
                                         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -48,7 +50,7 @@ export default function NavBar() {
                                         </NavDropdown> */}
                                     </Nav>
                                 </Navbar.Collapse>
-                                <CartWidget />
+                                {/* <CartWidget /> */}
                             </Container>
                         </Navbar>
 

@@ -35,12 +35,11 @@ export default function ItemListContainer({ greeting }) {
                  
                         ItemList=ItemList.filter(item => item.category === category);
                     }
-                   
                      setPruduct(ItemList);
                      setLoad(true);
                  })
-                 .catch((err) => { console.log(err) });
-     
+                 .catch((err) => { console.log(err) })
+                //  .finally(()=>setLoad(false))
          },[category])
 
 
@@ -49,6 +48,7 @@ export default function ItemListContainer({ greeting }) {
         <>
 
             <p style={{ width: "100%" }}> {greeting}</p>
+            
             <ItemList product={product} load={load} />
            
 

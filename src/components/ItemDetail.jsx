@@ -1,18 +1,21 @@
 // import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Card, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { cartContext } from '../context/CartProvider';
 
 
 
 export default function ItemDetail({ producto }) {
 
+    const {addToCart}= useContext(cartContext);
 // const [counter, setCounter] = useState();
 const [showItemCount, setShowItemCount] = useState(true);
 
 const onAdd = (count) => {
-    alert(count);
+    // alert(`Agregaste ${producto.product} - cantidad: ${count}`);
+    addToCart(producto, count);
     setShowItemCount(false);
     // setCounter(counter);
     

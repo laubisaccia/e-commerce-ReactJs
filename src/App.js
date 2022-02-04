@@ -1,19 +1,19 @@
 import './App.css';
-// import ItemCount from './components/ItemCount';
-// import ItemList from './components/itemList';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
+import CartProvider from './context/CartProvider';
 
 function App() {
   const saludo ="Bienvenido, pronto vamos a actualizar la tienda :)"
   return (
    <> 
-  
-   <BrowserRouter>
+  <CartProvider>
+
+  <BrowserRouter>
       <NavBar  />
       <Switch>
           <Route exact path="/" >
@@ -37,6 +37,8 @@ function App() {
       <Footer />
       </BrowserRouter>
       
+  </CartProvider>
+  
    </>
 
   );
