@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 // import { Card, Button } from "react-bootstrap";
 import { cartContext } from "../context/CartProvider";
@@ -7,25 +7,25 @@ import CartItem from "./CartItem";
 export default function Cart() {
 
     const { cart, clearCart, sumTotals, sumQuantityTotals } = useContext(cartContext);
-    const [total, setTotal] = useState(0);
-    const [quantityTotal, setQuantityTotal] = useState(0);
-    console.log("carro", cart);
+    // const [total, setTotal] = useState(0);
+    // const [quantityTotal, setQuantityTotal] = useState(0);
+    // console.log("carro", cart);
 
 
-    useEffect(() => {
-        setTotal(sumTotals());
+    // useEffect(() => {
+    //     setTotal(sumTotals());
         
-    }, [sumTotals])
-    useEffect(() => {
+    // }, [sumTotals])
+    // useEffect(() => {
         
-        setQuantityTotal(sumQuantityTotals());
-    }, [sumQuantityTotals])
+    //     setQuantityTotal(sumQuantityTotals());
+    // }, [sumQuantityTotals])
 
     return (
 
         <>
-            total a pagar:{total}
-            cantidad total:{quantityTotal}
+            total a pagar:{sumTotals()}
+            cantidad total:{sumQuantityTotals()}
             {cart.length === 0 ?
                 <div>
                     <div>Empty cart</div>

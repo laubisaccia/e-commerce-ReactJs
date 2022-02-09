@@ -1,4 +1,4 @@
-import React,{useContext, useState, useEffect} from "react";
+import React,{useContext} from "react";
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from "./CartWidget";
@@ -11,13 +11,10 @@ export default function NavBar() {
 
     const { sumQuantityTotals } = useContext(cartContext);
 
-    const [quantityTotal, setQuantityTotal] = useState(0);
-    
-
-    useEffect(() => {
-       
-        setQuantityTotal(sumQuantityTotals());
-    },[sumQuantityTotals])
+    // const [quantityTotal, setQuantityTotal] = useState(0);
+    // useEffect(() => {
+    //     setQuantityTotal(sumQuantityTotals());
+    // },[sumQuantityTotals])
 
     return (
         <>
@@ -50,7 +47,7 @@ export default function NavBar() {
 
                                         <LinkContainer to="/cart">
                                         <Nav.Link >Cart
-                                            <CartWidget quantityTotal={quantityTotal}/>
+                                            <CartWidget quantityTotal={sumQuantityTotals()}/>
                                         </Nav.Link>
                                         </LinkContainer>
                                        
