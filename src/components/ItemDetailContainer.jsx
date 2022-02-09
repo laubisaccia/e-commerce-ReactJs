@@ -20,11 +20,11 @@ export default function ItemDetailContainer() {
         const ItemDetail = new Promise((resolve, reject) => {
             setTimeout(() => {
 
-                let productList = [{ id: '1', product: 'Remera Summer', category: 'remeras', detail: 'lorem ipsum', prize: '$5000', img: remerasummer },
-                { id: '2', product: 'Pañuelo Red', category: 'accesorios', detail: 'lorem ipsum one', prize: '$3000', img: panuelored },
-                { id: '3', product: 'Remera Smile', category: 'remeras', detail: 'lorem ipsum two', prize: '$5000', img: remerasmile },
-                { id: '4', product: 'Pañuelo Blue', category: 'accesorios', detail: 'lorem ipsum two', prize: '$3000', img: panueloblue },
-                { id: '5', product: 'Aros Rayo', category: 'accesorios', detail: 'lorem ipsum two', prize: '$2800', img: arosRayo }];
+                let productList = [{ id: '1', product: 'Remera Summer', category: 'remeras', detail: 'lorem ipsum', prize: 5000, img: remerasummer },
+                { id: '2', product: 'Pañuelo Red', category: 'accesorios', detail: 'lorem ipsum one', prize: 3000, img: panuelored },
+                { id: '3', product: 'Remera Smile', category: 'remeras', detail: 'lorem ipsum two', prize: 5000, img: remerasmile },
+                { id: '4', product: 'Pañuelo Blue', category: 'accesorios', detail: 'lorem ipsum two', prize: 3000, img: panueloblue },
+                { id: '5', product: 'Aros Rayo', category: 'accesorios', detail: 'lorem ipsum two', prize: 2800, img: arosRayo }];
 
                 productList = productList.filter(item => item.id === itemId)
                 

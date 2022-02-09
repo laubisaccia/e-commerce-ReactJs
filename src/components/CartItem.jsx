@@ -10,7 +10,8 @@ export default function CartItem({ prod }) {
 
     return (
         <>
-            <div >{prod.item.product} - quantity:{prod.count}
+            <div >{prod.item.product} - quantity:{prod.count} - prize: {prod.item.prize} 
+            - subtotal: {prod.count * prod.item.prize}
             </div>
             <button onClick={() => deleteItem(prod.item.id)}>Delete</button>
         </>
