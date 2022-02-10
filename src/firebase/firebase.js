@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 const app = firebase.initializeApp(
-//PONER ACA LA INFO DE SU APP
+//INFO DE LA APP
 {
     apiKey: "AIzaSyAILp78h8qWF8TMmAUfhZ6GXcjanz8z98s",
     authDomain: "ecommercemdt-db939.firebaseapp.com",
