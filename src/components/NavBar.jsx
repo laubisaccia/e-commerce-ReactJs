@@ -41,9 +41,9 @@ export default function NavBar() {
                                         </LinkContainer> 
 
                                     
-                                        <LinkContainer to="/productos">
+                                        {/* <LinkContainer to="/productos">
                                         <Nav.Link >Productos</Nav.Link>
-                                        </LinkContainer>
+                                        </LinkContainer> */}
 
                                         <LinkContainer to="/cart">
                                         <Nav.Link >Cart
