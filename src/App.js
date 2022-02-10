@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Cart from './components/Cart';
 import CartProvider from './context/CartProvider';
 
+
 function App() {
   const saludo ="Bienvenido, pronto vamos a actualizar la tienda :)"
   return (
@@ -14,6 +15,7 @@ function App() {
   <CartProvider>
 
   <BrowserRouter>
+ 
       <NavBar  />
       <Switch>
           <Route exact path="/" >
