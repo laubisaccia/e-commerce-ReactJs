@@ -42,57 +42,59 @@ export default function ItemListContainer({ greeting }) {
     //      },[category])
 
     useEffect(() => {
-        
+
         const db = getFirestore();
+        let itemCollection;
+        if (category) {
+            itemCollection = db.collection('items').where('category', '==', category)
+        } else {
+            itemCollection = db.collection('items')
+        }
+        //const itemCollection = db.collection("items");
+        //.where('category', '==', category)
 
-        const itemCollection = db.collection("items");
-             //.where('category', '==', category)
-
-                     
         itemCollection
             .get()
             .then((querySnapShot) => {
-
-                if (category > '') {
-                    let prod = querySnapShot.docs.map((doc) => {
-                        return { id: doc.id, ...doc.data() };
-                    });
-                    let aux=  prod.filter((item)=> item.category === category);
-                    setPruduct(aux);
-                    setLoad(true);
-                }else{
-                    
-                
-                //   console.log('no hay documentos con en ese query');
-                //   return
-                // }
-
-                // console.log('hay documentos');
-
-                //console.log(querySnapShot.docs);
+                let prod = querySnapShot.docs.map((doc) => {
+                    return { id: doc.id, ...doc.data() };
+                });
+                setPruduct(prod);
                 setLoad(true);
-                setPruduct(querySnapShot.docs.map((doc) => {
-                    return { id: doc.id, ...doc.data() }
-                }
-                ));
-            }
+
             })
-            .catch((err) => {
-                console.log(err);
-            })
-    }, [category])
+        // if (category > '') {
+        //     let prod = querySnapShot.docs.map((doc) => {
+        //         return { id: doc.id, ...doc.data() };
+        //     });
+        //     let aux = prod.filter((item) => item.category === category);
+        //     setPruduct(aux);
+        //     setLoad(true);
+        // } else {
 
-    console.log("prod",product)
-    return (
-        <>
+        //     setLoad(true);
+        //     setPruduct(querySnapShot.docs.map((doc) => {
+        //         return { id: doc.id, ...doc.data() }
+        //     }
+        //     ));
+        // }
+    
+        .catch((err) => {
+            console.log(err);
+        })
+}, [category])
 
-            <p style={{ width: "100%" }}> {greeting}</p>
+console.log("prod", product)
+return (
+    <>
 
-            <ItemList product={product} load={load} />
+        <p style={{ width: "100%" }}> {greeting}</p>
+
+        <ItemList product={product} load={load} />
 
 
-        </>
+    </>
 
 
-    )
+)
 }

@@ -10,8 +10,6 @@ export default function Cart() {
     // const [total, setTotal] = useState(0);
     // const [quantityTotal, setQuantityTotal] = useState(0);
     // console.log("carro", cart);
-
-
     // useEffect(() => {
     //     setTotal(sumTotals());
         
@@ -20,10 +18,11 @@ export default function Cart() {
         
     //     setQuantityTotal(sumQuantityTotals());
     // }, [sumQuantityTotals])
-
+    console.log("cart",cart)
     return (
-
+      
         <>
+       
             total a pagar:{sumTotals()}
             cantidad total:{sumQuantityTotals()}
             {cart.length === 0 ?
@@ -39,6 +38,7 @@ export default function Cart() {
 
                     }
                     <button onClick={() => clearCart()}>Clear cart</button>
+                    <Link  to="/form">Finalizar compra</Link>
                 </div>
             }
 

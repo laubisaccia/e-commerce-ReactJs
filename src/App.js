@@ -5,11 +5,13 @@ import NavBar from './components/NavBar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
+import Form from './components/Form';
 import CartProvider from './context/CartProvider';
 
 
 function App() {
   const saludo ="Bienvenido, pronto vamos a actualizar la tienda :)"
+  
   return (
    <> 
   <CartProvider>
@@ -32,6 +34,10 @@ function App() {
 
           <Route path="/cart">
           <Cart />
+          </Route>
+
+          <Route path="/form">
+          <Form />
           </Route>
       
       {/* <ItemCount initial={1} stock={5}/> */}
