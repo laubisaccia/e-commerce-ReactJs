@@ -1,64 +1,53 @@
 // import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
-import React, {useState, useContext} from "react";
-import { Card, Spinner } from "react-bootstrap";
+import React, { useState, useContext } from "react";
+import { Card, Spinner, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { cartContext } from '../context/CartProvider';
 
-
-
 export default function ItemDetail({ producto }) {
 
-    const {addToCart}= useContext(cartContext);
-// const [counter, setCounter] = useState();
-const [showItemCount, setShowItemCount] = useState(true);
+    const { addToCart } = useContext(cartContext);
+    const [showItemCount, setShowItemCount] = useState(true);
 
-const onAdd = (count) => {
-    // alert(`Agregaste ${producto.product} - cantidad: ${count}`);
-    addToCart(producto, count);
-    setShowItemCount(false);
-    // setCounter(counter);
-    
-}
+    const onAdd = (count) => {
+        addToCart(producto, count);
+        setShowItemCount(false);
+    }
 
     return (
         <>
-       
-            <div style={{ margin: "20px" }}>
+            <div style={{ margin: "20px", marginTop: "7vh" }}>
                 {(producto.id) ?
-                
-                
+
                     <div>
                         <Card style={{ width: '18rem', align: "center" }}>
                             <Card.Img variant="top" src={producto.img} />
                             <Card.Body>
                                 <Card.Title>{producto.product}</Card.Title>
                                 <Card.Text>{producto.category}</Card.Text>
+                                <div style={{ fontSize: "12px" }}><b>DESCRIPCION</b></div>
                                 <Card.Text>{producto.detail}</Card.Text>
-                                <Card.Text>Precio{producto.prize}</Card.Text>
-                                {/* <Button variant="secondary">Ver detalle</Button> */}
+                                <Card.Text>${producto.prize}</Card.Text>
                             </Card.Body>
                             {
-                                (showItemCount)?
-                                <ItemCount initial={1} stock={5} onAdd={onAdd} />:
+                                (showItemCount) ?
+                                    <ItemCount initial={1} stock={5} onAdd={onAdd} /> :
 
-                                 <Link to={'/cart'}>
-                                 <button>link para terminar compra </button>
-                                
-                               </Link>
-
+                                    <Link to={'/cart'} className="card_button">
+                                        <Button variant="secondary" >Terminar mi compra</Button>
+                                    </Link>
                             }
-                            {/* <ItemCount initial={1} stock={5} onAdd={onAdd}/> */}
                         </Card>
                     </div> :
                     <Spinner animation="border" variant="secondary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-                    
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+
                 }
 
             </div>
-            
+
         </>
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {  Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 
 export default function ItemCount({ initial, stock, onAdd }) {
@@ -13,24 +13,22 @@ export default function ItemCount({ initial, stock, onAdd }) {
     const decrease = () => {
         if (count > initial) { setCount(count - 1) }
     };
-    
+
     return (
 
+        <div className='itemCount_container '>
 
-        <div >
-
-            <div style={{ display: "flex", width: "100%", flexDirection: "row" }}>
-                <Button variant="primary" style={{ width: "30%", padding: "0 10px" }} onClick={decrease}>-</Button>
-                <p style={{ border: "1px solid black", width: "30%", padding: "0 10px", margin: "0" }}>{count}</p>
-                <Button variant="primary" style={{ width: "30%", padding: "0 10px" }} onClick={increase}>+</Button>
+            <div style={{ display: "flex", width: "100%", flexDirection: "row", justifyContent: "space-around" }}>
+                <Button variant="secondary" style={{ width: "20%", padding: "0 10px" }} onClick={decrease}>-</Button>
+                <p style={{ border: "1px solid black", width: "20%", padding: "0 10px", margin: "0" }}>{count}</p>
+                <Button variant="secondary" style={{ width: "20%", padding: "0 10px" }} onClick={increase}>+</Button>
             </div>
 
-            <div>
-                <Button variant="primary" style={{ width: "90%", padding: "0 10px" }} onClick={()=>onAdd(count)} >Agregar</Button>
+            <div style={{ width: "100%", display: "flex", justifyContent: "center", margin: "auto" }}>
+                <Button variant="secondary" style={{ width: "50%", padding: "0 10px", margin: "10px 0" }} onClick={() => onAdd(count)} >Agregar </Button>
             </div>
 
         </div>
-
     );
 }
 

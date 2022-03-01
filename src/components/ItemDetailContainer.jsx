@@ -2,79 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import { getFirestore } from '../firebase/firebase'
-// import remerasummer from '../aseets/img/remerasummer.jpg'
-// import remerasmile from '../aseets/img/remerasmile.jpg'
-// import panuelored from '../aseets/img/panuelored.jpg'
-// import panueloblue from '../aseets/img/panueloblue.jpg'
-// import arosRayo from '../aseets/img/arosRayo.jpg'
-
 
 export default function ItemDetailContainer() {
 
-    
-    const { itemId } = useParams();
-    const [producto, setProducto] = useState({});
+  const { itemId } = useParams();
+  const [producto, setProducto] = useState({});
 
-    //CON FIREBASE
-    useEffect(() => {
+  useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
+    //en este caso recibo el param, pero podria buscar con un id especifico
+    const miItem = itemCollection.doc(itemId);
 
-        const db = getFirestore();
-        const itemCollection = db.collection("items");
-        //PONER ACA EL ID DE SU DOCUMENTO A BUSCAR O EN ESTE CASO MI PARAM RECIBIDO
-        const miItem = itemCollection.doc(itemId);
-    
-        miItem.get()    
-          .then((doc) => {
-            if (!doc.exists) {
-              console.log('no existe ese documento');
+    miItem.get()
+      .then((doc) => {
+        if (!doc.exists) {
+          console.log('no existe ese documento');
           return
-         }
-    
-            console.log('item found');
-            setProducto({ id: doc.id, ...doc.data() });
-    
-          })
-          .catch((err)=>{
-            console.log(err);
-          })
-      }, [itemId])
+        }
 
-//SIN FIREBASE
-    // useEffect(() => {
+        setProducto({ id: doc.id, ...doc.data() });
 
-    //     const ItemDetail = new Promise((resolve, reject) => {
-    //         setTimeout(() => {
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [itemId])
 
-    //             let productList = [{ id: '1', product: 'Remera Summer', category: 'remeras', detail: 'lorem ipsum', prize: 5000, img: remerasummer },
-    //             { id: '2', product: 'Pañuelo Red', category: 'accesorios', detail: 'lorem ipsum one', prize: 3000, img: panuelored },
-    //             { id: '3', product: 'Remera Smile', category: 'remeras', detail: 'lorem ipsum two', prize: 5000, img: remerasmile },
-    //             { id: '4', product: 'Pañuelo Blue', category: 'accesorios', detail: 'lorem ipsum two', prize: 3000, img: panueloblue },
-    //             { id: '5', product: 'Aros Rayo', category: 'accesorios', detail: 'lorem ipsum two', prize: 2800, img: arosRayo }];
-
-    //             productList = productList.filter(item => item.id === itemId)
-                
-    //             let myProduct = productList[0]
-                
-    //             setProducto(myProduct)
-
-    //         }, 2000)
-    //     });
-
-    //     ItemDetail
-    //         .then((ItemDetail) => {
-    //             setProducto(ItemDetail);
-               
-    //         })
-    //         .catch((err) => { console.log(err) });
-
-    // }, [itemId])
-    return (
-        <>
-            
-            <ItemDetail producto={producto} />
-
-        </>
-
-
-    )
+  return (
+    <>
+      <div className='itemDetailContainer-container'>
+        <ItemDetail producto={producto} />
+      </div>
+    </>
+  )
 }

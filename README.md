@@ -4,54 +4,41 @@
 
 Maria de tomaso e-commerce. Special thanks to the brand for all images and information
 
+# Developer
+
+Maria Laura Bisaccia
+
 # Styles
 
 React bootstrap
 
-# Getting Started with Create React App
+# Tools used to build it
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **ReactJS**
+- **Create React App** 
+- **React Router DOM** - As it is handy to perform navigation between components which through easy-to-use hooks, we can implement various forms of navigation between components
+- **Firebase's Firestore** - Used as there is no backend envolved in this project. It is a cloud-hosted NoSQL database where you can create subcollections within documents and create hierarchical data structures that scale as your database grows
+
+# How to set it up
+
+This project was bootstrapped with [Create React App]
+### Clone repository, navigate to repo´s directory and run `npm i`
+
+### Then run `npm start`
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### project should be up and running
 
 # Video Demo
 
-You can see a demo at:
+You can see a video demo process at:
 
 https://drive.google.com/file/d/1kIK9OS_dGku_RXGjx_lmqJ-VkJE1mtSM/view?usp=sharing
 
-## Available Scripts
+And also a video demo with project completed:
 
-In the project directory, you can run:
+https://drive.google.com/file/d/1pIaL8t43A9irv24JGvmxQ4RUtio_nELj/view?usp=sharing
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 

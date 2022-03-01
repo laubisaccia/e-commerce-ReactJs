@@ -10,45 +10,39 @@ import CartProvider from './context/CartProvider';
 
 
 function App() {
-  const saludo ="Bienvenido, pronto vamos a actualizar la tienda :)"
+  const saludo ="SHOP NOW"
   
   return (
    <> 
-  <CartProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar  />
+            <Switch>
+                <Route exact path="/" >
+                <ItemListContainer greeting={saludo}/>
+                </Route>
 
-  <BrowserRouter>
- 
-      <NavBar  />
-      <Switch>
-          <Route exact path="/" >
-          <ItemListContainer greeting={saludo}/>
-          </Route>
+                <Route path="/productos/:itemId">
+                <ItemDetailContainer />
+                </Route>
 
-          <Route path="/productos/:itemId">
-          <ItemDetailContainer />
-          </Route>
+                <Route path="/cat/:category">
+                <ItemListContainer />
+                </Route>
 
-          <Route path="/cat/:category">
-          <ItemListContainer />
-          </Route>
+                <Route path="/cart">
+                <Cart />
+                </Route>
 
-          <Route path="/cart">
-          <Cart />
-          </Route>
-
-          <Route path="/form">
-          <Form />
-          </Route>
-      
-      {/* <ItemCount initial={1} stock={5}/> */}
-      </Switch>
-      <Footer />
-      </BrowserRouter>
-      
-  </CartProvider>
-  
+                <Route path="/form">
+                <Form />
+                </Route>
+            
+            </Switch>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
    </>
-
   );
 }
 
