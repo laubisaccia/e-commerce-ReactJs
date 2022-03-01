@@ -40,5 +40,8 @@ And also a video demo with project completed:
 
 https://drive.google.com/file/d/1pIaL8t43A9irv24JGvmxQ4RUtio_nELj/view?usp=sharing
 
+# GIF's
+https://media.giphy.com/media/HfNpGUO2BYusBjtISf/giphy.gif
 
+https://media.giphy.com/media/QQi3Ea4pjcLwTC0CAy/giphy.gif
 
